@@ -10,4 +10,5 @@ If you are putting them inside a script tag with src, use this:
 
 **Links**
 
- - [Codepen Project](https://codepen.io/Mending77/pen/NWoERNZ)
+ - [Firebase](https://firebase.google.com)
+ - [Firebase documentation](https://firebase.google.com/docs)
