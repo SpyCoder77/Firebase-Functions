@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, setDoc, getDoc, query, where, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, setDoc, ,getDoc query, where, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 const db = getFirestore(app);
 
 //Functions
@@ -49,3 +49,9 @@ async function getDocument(collectionId, documentId) {
     }
     return documents;
   }
+
+const changeDoc = async (collectionId, documentId, data) => {
+    if (!collectionName || !docName || !data) throw new Error("Required params missing");
+    data = typeof data !== "object" ? JSON.parse(data) : data;
+    await updateDoc(doc(db, collectionName, docName), data);
+}
