@@ -69,7 +69,7 @@ const user = auth.currentUser;
   }
 }
 
-  function signOut() {
+  function signOutUser() {
     signOut(auth).then(() => {
       console.log("Successfully signed out!");
     }).catch((error) => {
