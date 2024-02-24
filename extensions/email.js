@@ -26,8 +26,8 @@ async function sendEmail(recipients, subject, message, html) {
         },
     });
     const unsub = onSnapshot(doc(db, "mail", docData.id), (doc) => {
-        if (doc.data().delivery.info.state == "SUCCESS") {
-            console.log("Email Successfully sent!");
+        if (doc.data().delivery.info.state) {
+            console.log("Email state: " + doc.data().delivery.info.state);
         }
     });
 }
