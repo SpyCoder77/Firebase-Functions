@@ -17,12 +17,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 async function askGemini(prompt) {
-    let docData = await addDoc(collection(db, "gemini", docId), {
-      prompt: prompt
-    });
-    const unsub = onSnapshot(doc(db, "gemini", docData.id), (doc) => {
-        if (doc.data().response) {
-            return doc.data().response;
-        }
-    });
+  let docData = await addDoc(collection(db, "gemini"), {
+    prompt: prompt,
+  });
+  const unsub = onSnapshot(doc(db, "gemini", docData.id), (doc) => {
+    if (doc.data().response) {
+      return doc.data().response;
+    }
+  });
 }
