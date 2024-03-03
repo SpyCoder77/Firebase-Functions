@@ -17,13 +17,13 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 async function sendEmail(recipients, subject, message, html) {
-    let docData = await addDoc(collection(db, "mail", docId), {
-        to: recipients,
-        message: {
-            subject: subject,
-            text: message,
-            html: html
-        },
+    let docData = await addDoc(collection(db, "mail"), {
+      to: recipients,
+      message: {
+        subject: subject,
+        text: message,
+        html: html,
+      },
     });
     const unsub = onSnapshot(doc(db, "mail", docData.id), (doc) => {
         if (doc.data().delivery.info.state) {
