@@ -14,4 +14,5 @@ If you are putting them inside a script tag with src, use this:
  - [Firebase documentation](https://firebase.google.com/docs)
 
 **Big News**
+
 We are officially announcing our own VSCode extension! It adds all of these code snippets and more!
