@@ -16,12 +16,13 @@ const user = auth.currentUser;
       const user = result.user;
       if (user.email) {
         const userInfo = {
-            uid: user.uid,
-            email: user.email,
-            photo: user.photoURL,
-            display: user.displayName
-          };
-        setCookie("user", JSON.stringify(userInfo), 7)
+          uid: user.uid,
+          email: user.email,
+          photo: user.photoURL,
+          display: user.displayName,
+        };
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        console.log("User info", userInfo);
       } else {
         console.error("User email is undefined");
       }
