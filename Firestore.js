@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, setDoc, ,getDoc query, where, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, setDoc, getDoc, query, where, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 const db = getFirestore(app);
 
 //Functions

@@ -6,6 +6,7 @@ const user = auth.currentUser;
 
 //Functions 
   
+
   let googleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
